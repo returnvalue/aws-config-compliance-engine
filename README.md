@@ -30,8 +30,7 @@ The system implements an automated compliance monitoring and alerting framework:
     ```bash
     terraform init
     terraform apply -auto-approve
-    
-```
+    ```
 
 ## Verification & Testing
 
@@ -41,24 +40,21 @@ To test the continuous compliance engine:
     ```bash
     awslocal configservice describe-configuration-recorder-status
     aws configservice describe-configuration-recorder-status
-    
-```
+    ```
 
 2.  **Check Config Rules:**
     List the deployed compliance rules:
     ```bash
     awslocal configservice describe-config-rules
     aws configservice describe-config-rules
-    
-```
+    ```
 
 3.  **Inspect Compliance Status:**
     View the current compliance state for a specific rule:
     ```bash
     awslocal configservice get-compliance-details-by-config-rule --config-rule-name s3-bucket-public-read-prohibited
     aws configservice get-compliance-details-by-config-rule --config-rule-name s3-bucket-public-read-prohibited
-    
-```
+    ```
 
 4.  **Simulate Non-Compliance (Conceptual):**
     In a real environment, creating an unencrypted EBS volume would trigger the `encrypted-volumes` rule and generate a CloudWatch Event.
